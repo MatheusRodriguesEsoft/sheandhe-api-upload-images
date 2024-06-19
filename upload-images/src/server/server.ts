@@ -1,21 +1,19 @@
-import { uploadController } from '../drive/uploadController';
-import { deleteImage } from '../drive/deleteImages';
-import express from 'express';
-import cors from 'cors';
+import { uploadController } from '../drive/uploadController'
+import { deleteController } from '../drive/deleteImages'
+import express from 'express'
+import cors from 'cors'
 
+const app = express()
 
-
-const app = express();
-
-app.use(cors({ origin: '*' }));
-app.use(express.json());
+app.use(cors({ origin: '*' }))
+app.use(express.json())
 
 app.get('/', (req, res) => {
-  return res.send('API SHE&HE Upload Images');
-});
+  return res.send('API SHE&HE Upload Images')
+})
 
-app.post('/upload', uploadController );
+app.post('/upload', uploadController)
 
-app.delete('/delete/:fileName', deleteImage);
+app.delete('/delete/:fileName', deleteController)
 
-export { app };
+export { app }

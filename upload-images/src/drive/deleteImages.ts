@@ -6,7 +6,7 @@ dotenv.config()
 
 const BUCKET_NAME = process.env.AWS_S3_BUCKET_NAME
 
-export const deleteImage = async (req: Request, res: Response) => {
+export const deleteController = async (req: Request, res: Response) => {
   try {
     const { fileName } = req.params
 
