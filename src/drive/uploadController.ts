@@ -20,7 +20,7 @@ export const uploadController = (req: Request, res: Response) => {
       console.error('Multer Error:', err)
       return res.status(500).json({ error: 'Multer Error' })
     }
-    uploadHandler(req, res)
+    return uploadHandler(req, res) // Adicionado o return aqui
   })
 }
 
