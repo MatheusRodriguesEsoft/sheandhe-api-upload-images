@@ -1,25 +1,31 @@
+import express from 'express';
+import { config } from 'dotenv';
 import cors from 'cors';
-import express from 'express'
-import { config } from 'dotenv'
-import { deleteController } from './drive/deleteImages'
-import { uploadController } from './drive/uploadController'
+import { deleteController } from './drive/deleteImages';
+import { uploadController } from './drive/uploadController';
 
-config()
+config();
 
-const app = express()
+const app = express();
 
-const PORT = process.env.PORT || 3001
+const PORT = process.env.PORT || 3001;
 
-app.use(cors({ origin: '*' }));
+const corsOptions = {
+  origin: 'https://dashboard.sheandhe.com.br',
+  methods: ['GET', 'POST', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+};
 
-app.get('/', (req, res) => {
-  return res.send('API SHE&HE Upload Images')
-})
+app.use(cors(corsOptions));
 
-app.post('/upload', uploadController)
+app.get('/', (_req, res) => {
+  return res.send('API SHE&HE Upload Images');
+});
 
-app.delete('/delete/:fileName', deleteController)
+app.post('/upload', uploadController);
+
+app.delete('/delete/:fileName', deleteController);
 
 app.listen(PORT, () => {
-  console.log(`Server is running on port: ${PORT}`)
-})
+  console.log(`Server is running on port: ${PORT}`);
+});
