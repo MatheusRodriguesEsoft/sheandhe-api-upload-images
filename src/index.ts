@@ -10,7 +10,7 @@ const app = express()
 
 const PORT = process.env.PORT || 3001
 
-app.use(cors());
+app.use(cors({ origin: '*' }));
 
 app.get('/', (req, res) => {
   return res.send('API SHE&HE Upload Images')
