@@ -1,3 +1,3 @@
 import { app } from './server/server'
 
-app.listen(3001, () => console.log('Server running on 3001: http://localhost:3001'))
+app.listen(3000, () => console.log('Server running on 3000: http://localhost:3000'))
