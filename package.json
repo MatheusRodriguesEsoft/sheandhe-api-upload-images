@@ -1,29 +1,26 @@
 {
-  "name": "sheandhe-api-upload-images",
+  "name": "api-upload-image",
   "version": "1.0.0",
-  "description": "API SHE&HE Upload Images",
   "main": "index.js",
   "author": "Matheus Rodrigues",
   "license": "MIT",
-  "private": true,
-  "dependencies": {
-    "@aws-sdk/client-s3": "^3.504.0",
-    "aws-sdk": "^2.1549.0",
-    "cors": "^2.8.5",
-    "dotenv": "^16.4.1",
-    "express": "^4.18.2",
-    "googleapis": "^129.0.0",
-    "googleapis-common": "^7.0.1",
-    "multer": "^1.4.5-lts.1"
-  },
   "scripts": {
-    "start": "ts-node-dev ./src/index.ts"
+    "watch": "tsc -w",
+    "dev": "nodemon dist/index.js",
+    "build" : "tsc",
+    "start": "node dist/index.js"
+  },
+  "dependencies": {
+    "@types/nodemon": "^1.19.6",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2"
   },
   "devDependencies": {
-    "@types/cors": "^2.8.17",
+    "@aws-sdk/client-s3": "^3.504.0",
+    "aws-sdk": "^2.1549.0",
     "@types/express": "^4.17.21",
-    "@types/multer": "^1.4.11",
-    "ts-node-dev": "^2.0.0",
-    "typescript": "^5.3.2"
+    "@types/node": "^20.14.6",
+    "nodemon": "^3.1.4",
+    "typescript": "^5.4.5"
   }
 }
