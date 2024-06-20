@@ -10,13 +10,7 @@ const app = express()
 
 const PORT = process.env.PORT || 3001
 
-const corsOptions = {
-  origin: 'https://dashboard.sheandhe.com.br/',
-  methods: ['GET', 'POST', 'DELETE'],
-  allowedHeaders: ['Content-Type', 'Authorization']
-};
-
-app.use(cors(corsOptions));
+app.use(cors());
 
 app.get('/', (req, res) => {
   return res.send('API SHE&HE Upload Images')
